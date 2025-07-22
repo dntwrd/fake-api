@@ -3,7 +3,7 @@ from fastapi.responses import JSONResponse
 from datetime import datetime, date
 from typing import Optional, List
 import re
-
+# для комита
 
 app = FastAPI()
 
