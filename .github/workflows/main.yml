@@ -24,7 +24,7 @@ jobs:
         run: |
          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
           set -e
-            cd fastapi-app || git clone https://github.com/dntwrd/fake-api.git fastapi-app && cd fastapi-app
+            cd fastapi-app || (git clone https://github.com/dntwrd/fake-api.git fastapi-app && cd fastapi-app)
             git pull origin main
             docker stop fastapi || true
             docker rm fastapi || true
