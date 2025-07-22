@@ -19,10 +19,9 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          nc -zv ${{ secrets.SSH_HOST }} 22
 
       - name: Deploy via SSH
         run: |
          ssh root@${{ secrets.SSH_HOST }} << 'EOF'
-          mkdir test1
+          mkdir test2
          EOF
