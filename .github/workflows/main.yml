@@ -23,11 +23,5 @@ jobs:
       - name: Deploy via SSH
         run: |
          ssh -vvv ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-         set -e
-         cd ~/fastapi-app || git clone git@github.com:dntwrd/fake-api.git fastapi-app && cd fastapi-app
-         git pull origin main
-         docker stop fastapi || true
-         docker rm fastapi || true
-         docker build -t fastapi-app .
-         docker run -d --name fastapi -p 80:80 fastapi-app
+          mkdir test
          EOF
