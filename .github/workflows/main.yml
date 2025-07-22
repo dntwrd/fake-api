@@ -19,7 +19,7 @@ jobs:
           echo "${{ secrets.SSH_KEY }}" > ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
-          ping -c 5 104.167.197.82
+          nc -zv ${{ secrets.SSH_HOST }} 22
 
       - name: Deploy via SSH
         run: |
