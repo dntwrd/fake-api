@@ -22,6 +22,6 @@ jobs:
 
       - name: Deploy via SSH
         run: |
-         ssh root@45.8.230.191 << 'EOF'
+         ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}1 << 'EOF'
           mkdir test
          EOF
