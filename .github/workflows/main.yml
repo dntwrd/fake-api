@@ -20,14 +20,14 @@ jobs:
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
 
-      - name: 🚀 Deploy to remote server
+      - name: Deploy via SSH
         run: |
-          ssh -vvv ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-            set -e
-            cd ~/fastapi-app || git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git fastapi-app && cd fastapi-app
-            git pull origin main
-            docker stop fastapi || true
-            docker rm fastapi || true
-            docker build -t fastapi-app .
-            docker run -d --name fastapi -p 80:80 fastapi-app
-          EOF
+         ssh -vvv ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+         set -e
+         cd ~/fastapi-app || git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git fastapi-app && cd fastapi-app
+         git pull origin main
+         docker stop fastapi || true
+         docker rm fastapi || true
+         docker build -t fastapi-app .
+         docker run -d --name fastapi -p 80:80 fastapi-app
+         EOF
