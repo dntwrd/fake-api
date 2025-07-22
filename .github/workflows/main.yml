@@ -22,7 +22,7 @@ jobs:
 
       - name: 🚀 Deploy to remote server
         run: |
-          ssh -vvv -p ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          ssh -vvv ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
             set -e
             cd ~/fastapi-app || git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git fastapi-app && cd fastapi-app
             git pull origin main
