@@ -229,7 +229,7 @@ async def search(city: Optional[str] = None, check_in: Optional[str] = None, che
         )
     except CityValidationException as e:
         return JSONResponse(
-            status_code=400,
+            status_code=200,
             content={
                 "status": "error",
                 "code": e.code,
@@ -238,7 +238,7 @@ async def search(city: Optional[str] = None, check_in: Optional[str] = None, che
         )
     except DateSearchValidationException as e:
         return JSONResponse(
-            status_code=400,
+            status_code=200,
             content={
                 "status": "error",
                 "code": e.code,
