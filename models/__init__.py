@@ -1,0 +1,1 @@
+from .hotels.hotels_search_models import Hotel
