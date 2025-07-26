@@ -1,1 +1,2 @@
 from .hotels.hotels_search_services import HotelSearchService
+from .hotels.hotels_rooms_services import  HotelRoomService

@@ -1,4 +1,4 @@
-from typing import Optional, List
+from typing import Optional
 
 class Hotel:
     def __init__(self, id: int, hotel_name: str, description: str, city: str, country: str, stars: Optional[int], price: float):
