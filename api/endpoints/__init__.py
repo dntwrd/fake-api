@@ -1,5 +1,6 @@
-from .hotels.hotel_search  import app as app
+from .hotels.hotel_search import app as hotel_search
+from .hotels.rooms_search import app as rooms_search
 
 hotels_routers = [
-    app
+    hotel_search, rooms_search
 ]
