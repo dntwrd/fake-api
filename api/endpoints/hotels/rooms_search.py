@@ -2,7 +2,6 @@ from fastapi import FastAPI, APIRouter, Query, HTTPException, Request
 from fastapi.responses import JSONResponse
 from exceptions import CityValidationException, DateSearchValidationException, MethodValidationException
 from typing import Optional, List
-from services import HotelSearchService
 
 app = APIRouter()
 
