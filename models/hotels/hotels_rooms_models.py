@@ -17,5 +17,5 @@ class Room:
             'room_id': self.room_id,
             'room_name': self.room_name,
             'room_description': self.room_description,
-            "price": self.price
+            #"price": self.price
         }
