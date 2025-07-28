@@ -1,7 +1,7 @@
 from typing import Optional
 
 class Hotel:
-    def __init__(self, id: int, hotel_name: str, description: str, city: str, country: str, stars: Optional[int], price: float):
+    def __init__(self, id: int, hotel_name: str, description: str, city: str, country: str, stars: Optional[int], price: Optional[int] = None):
         self.id = id
         self.hotel_name = hotel_name
         self.description = description

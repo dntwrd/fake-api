@@ -2,14 +2,15 @@ from datetime import date
 from typing import Optional
 
 class Room:
-    def __init__(self, hotel_id: int, hotel_name: str, room_id: int, room_name: str, room_description: str):
+    def __init__(self, hotel_id: int, hotel_name: str, room_id: int, room_name: str, room_description: str, price_one_night: int):
     #def __init__(self, hotel_id: int, hotel_name: str, room_id: int, room_name: str, room_description: str, price: int):
         self.hotel_id = hotel_id
         self.hotel_name = hotel_name
         self.room_id = room_id
         self.room_name = room_name
         self.room_description = room_description
-        #self.price = price
+        self.price_one_night = price_one_night
+        self.full_price = 0
 
     def to_dict(self):
         return {
@@ -18,5 +19,6 @@ class Room:
             'room_id': self.room_id,
             'room_name': self.room_name,
             'room_description': self.room_description,
-            #"price": self.price
+            "price_one_night": self.price_one_night,
+            "full_price": self.full_price
         }
